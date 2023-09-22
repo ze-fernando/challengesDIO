@@ -25,5 +25,11 @@ public class Estacionamento{
                 Console.WriteLine("Veiculo removido com sucesso!");
             }
         }
-    }   
+    }
+
+    public void listarVeiculos(){
+        foreach (var v in veiculos){
+            Console.WriteLine($"Veiculo {v}\n");
+        }
+    }
 }
