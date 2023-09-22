@@ -12,24 +12,42 @@ public class Estacionamento{
     }
 
     public void adcionarVeiculo(){
+        string placa = "";
         Console.WriteLine("Digite a placa do veiculo a ser adcionado");
-        string placa = Console.ReadLine();
+        placa = Console.ReadLine();
         veiculos.Add(placa);
         Console.WriteLine("Carro adcinado com sucesso!");
     }
 
-    public void removerVeiculo(string placa){
-        foreach (var v in veiculos){
-            if (v == placa){
-                veiculos.Remove(v);
-                Console.WriteLine("Veiculo removido com sucesso!");
+    public void removerVeiculo(){
+        Console.WriteLine("Digite a placa do veiculo a ser removido");
+        string placa = Console.ReadLine();
+        if (veiculos.Any(x => x.ToUpper() == placa.ToUpper())){
+             Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
+             decimal horas = Convert.ToDecimal(Console.ReadLine);
+             decimal valorTotal = precoInicial + precoPorHora * horas;
+                
+            foreach (var v in veiculos){
+                if (v == placa){
+                    veiculos.Remove(v);
+                    break;
+                }
             }
+            Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
+        }
+        else{
+            Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
         }
     }
 
     public void listarVeiculos(){
-        foreach (var v in veiculos){
-            Console.WriteLine($"Veiculo {v}\n");
+        if (veiculos.Any()){
+            foreach (var v in veiculos){
+                Console.WriteLine($"Veiculo: {v}\n");
+            }
+        }
+        else{
+            Console.WriteLine("Não há Veiculos aqui");
         }
     }
 }
