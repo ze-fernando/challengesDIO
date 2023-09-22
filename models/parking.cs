@@ -10,6 +10,12 @@ public class Estacionamento{
         this.precoInicial = precoInicial;
         this.precoPorHora = precoPorHora;
     }
-    
+
+    public void adcionarVeiculo(){
+        Console.WriteLine("Digite a placa do veiculo a ser adcionado");
+        string placa = Console.ReadLine();
+        veiculos.Add(placa);
+        Console.WriteLine("Carro adcinado com sucesso!");
+    }
     
 }
