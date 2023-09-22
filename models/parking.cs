@@ -17,5 +17,13 @@ public class Estacionamento{
         veiculos.Add(placa);
         Console.WriteLine("Carro adcinado com sucesso!");
     }
-    
+
+    public void removerVeiculo(string placa){
+        foreach (var v in veiculos){
+            if (v == placa){
+                veiculos.Remove(v);
+                Console.WriteLine("Veiculo removido com sucesso!");
+            }
+        }
+    }   
 }
