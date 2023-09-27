@@ -1,5 +1,16 @@
-public class suite{
-    public string tipoSuite {get; set;}
-    public int capacidade {get; set;}
-    public decimal valorDiaria {get; set;}
+namespace DesafioHotel{
+    public class Suite{
+        public Suite(){}
+
+        public Suite(string tipoSuite, int capacidade, decimal valorDiaria){
+            TipoSuite = tipoSuite;
+            Capacidade = capacidade;
+            ValorDiaria = valorDiaria;
+        }
+
+        public string TipoSuite { get; set; }
+        public int Capacidade { get; set; }
+        public decimal ValorDiaria { get; set; }
+        
+    }
 }
