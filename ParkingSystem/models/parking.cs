@@ -1,7 +1,6 @@
 using System.Collections;
 
 public class Estacionamento{
-    
     private decimal precoInicial;
     private decimal precoPorHora;
     private List<string> veiculos = new List<string>();
